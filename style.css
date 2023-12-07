@@ -27,11 +27,12 @@ body{
     color:white;
     border-radius:20px;
     text-align:center;
-    margin-left:10%
+    margin-left:10%;
+    padding:3%;
 }
 
 .weatherimage{
-    width:40px;
+    width:30px;
 }
 
 .innertext{
