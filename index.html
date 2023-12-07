@@ -2,18 +2,26 @@
     <head>
         <title>Geo With Weather</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost&family=Kanit:wght@100;200;600&family=Lato:wght@300&family=Oswald:wght@300&family=Pathway+Extreme:opsz,wght@8..144,500&family=Tilt+Neon&display=swap" rel="stylesheet">
     </head>
     <body>
 
 
         <div id="inputContainer">
-            <div id="inputtextcontainer"><input type="text" id="cityinput" placeholder="name of city"></input><button id="cityinputbutton">Go</button></div>
-            <div id="showlocation">Weather In A</div>
-            <div id="showlocation2">Weather In A</div>
-            <div id="showtemperature">27oC</div>
-            <div id="showweather"><img src="./image/clouds.png" id="weatherimage">Scattered Cloud</div>
-            <div id="showhumidity">Humidity: 78%</div>
-            <div id="showwindspeed">Windspeed: 8.23 km/h</div>
+            <h1>Weather Update</h1>
+            <h3>Find Out The Weather Of All Cities In The World</h3><br>
+            <div id="inputtextcontainer"><input type="text" id="cityinput" placeholder="name of city"></input></div>
+            <br><br>
+            <div id="resultcontainer" class="nona onlyresult">
+                <!-- <div id="showlocation">Weather In A</div> -->
+                <div id="showlocation2" class="innertext"></div>
+                <div id="showtemperature" class="innertext"></div>
+                <div id="showweather" class="innertext"></div>
+                <div id="showhumidity" class="innertext"></div>
+                <div id="showwindspeed" class="innertext"></div>
+            </div>
 
         
 
@@ -32,10 +40,10 @@
 
 
 
-
+<!-- 
         <button onclick="geolocation()">Get Location</button>
         <p id="out"></p>
-        <p id="weather"></p>
+        <p id="weather"></p> -->
 
 
 

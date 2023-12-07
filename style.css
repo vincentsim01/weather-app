@@ -4,16 +4,42 @@ body{
     text-align:center;
 }
 
+#cityinput{
+    border-radius: 20px;
+    text-align: center;
+}
+
 #inputcontainer{
     text-align: center;
-    background-color: rgba(108, 122, 137,0.3);
+    background-color: rgba(108, 122, 137,0.5);
     display:inline-block;
     width:40%;
-    padding:10%;
+    padding:5%;
+    margin-top:5%;
+    border-radius:30px;
+    font-family: 'Jost', sans-serif;
 }
 
-#weatherimage{
-    width:20px;
+#resultcontainer{
+
+    width:80%;
+    background:rgba(0,0,0,0.7);
+    color:white;
+    border-radius:20px;
+    text-align:center;
+    margin-left:10%
 }
 
+.weatherimage{
+    width:40px;
+}
+
+.innertext{
+    margin:8px;
+}
+
+
+.nona{
+    display:none;
+}
 

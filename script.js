@@ -1,11 +1,12 @@
 
 let cityinput=document.getElementById('cityinput');
-let cityinputbutton=document.getElementById('cityinputbutton');
+// let cityinputbutton=document.getElementById('cityinputbutton');
 let showlocation=document.getElementById('showlocation');
 let showtemperature=document.getElementById('showtemperature');
 let showweather=document.getElementById('showweather');
 let showhumidity=document.getElementById('showhumidity');
 let showwindspeed=document.getElementById('showwindspeed');
+let resultcontainer=document.getElementById('resultcontainer');
 
 
 let showlocation2=document.getElementById('showlocation2');
@@ -17,9 +18,13 @@ cityinput.addEventListener('change', getCity);
 
 function getCity(event){
 
-    showlocation.innerHTML=`This is the Weather In ${event.target.value}`;
+    // showlocation.innerHTML=`This is the Weather In ${event.target.value}`;
+
+    resultcontainer.classList.toggle('nona');
 
     let theURL=`https://api.openweathermap.org/data/2.5/weather?q=${event.target.value}&appid=286ad2f78fee5038e5f4c39b2c60a946`;
+
+
 
 
         //api calling
@@ -33,9 +38,32 @@ function getCity(event){
 
             showlocation2.innerHTML=`The City from API is ${cityName}`;
             showtemperature.innerHTML=`The temperature from API is ${(data.main.temp-273.15).toFixed(2)}C`;
-            showweather.innerHTML=`The weather from API is ${(data.weather[0].main)}`;
             showhumidity.innerHTML=`The humidity from API is ${(data.main.humidity)}%`;
             showwindspeed.innerHTML=`The wind speed from API is ${(data.wind.speed)} km/hr`;
+
+
+
+            if(data.weather[0].main=="Rain"){
+                showweather.innerHTML=`<img src="https://i.ibb.co/TTzVD2W/rain.png" class="weatherimage"> The weather from API is ${(data.weather[0].main)}`;
+            }else if(data.weather[0].main=="Haze"){
+                showweather.innerHTML=`<img src="https://i.ibb.co/jHj79gX/mist.png" class="weatherimage"> The weather from API is ${(data.weather[0].main)}`;
+
+            }else if(data.weather[0].main=="light rain"){
+                showweather.innerHTML=`<img src="https://i.ibb.co/RyM16B2/drizzle.png" class="weatherimage"> The weather from API is ${(data.weather[0].main)}`;
+
+            }else if(data.weather[0].main=="Clouds"){
+                showweather.innerHTML=`<img src="https://i.ibb.co/THX9p7Z/clouds.png" class="weatherimage"> The weather from API is ${(data.weather[0].main)}`;
+
+            }else if(data.weather[0].main=="Fog"){
+                showweather.innerHTML=`<img src="https://i.ibb.co/jHj79gX/mist.png" class="weatherimage"> The weather from API is ${(data.weather[0].main)}`;
+
+            }else if(data.weather[0].main=="Snow"){
+                showweather.innerHTML=`<img src="https://i.ibb.co/0mc6SRj/snow.png" class="weatherimage"> The weather from API is ${(data.weather[0].main)}`;
+
+            }else{
+                showweather.innerHTML=`<img src="https://i.ibb.co/tX6Cbgk/clear.png" class="weatherimage"> The weather from API is ${(data.weather[0].main)}`;
+
+            }
 
 
         })
