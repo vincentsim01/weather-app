@@ -1,7 +1,14 @@
 
 let cityinput=document.getElementById('cityinput');
 let cityinputbutton=document.getElementById('cityinputbutton');
+let showlocation=document.getElementById('showlocation');
+let showtemperature=document.getElementById('showtemperature');
+let showweather=document.getElementById('showweather');
+let showhumidity=document.getElementById('showhumidity');
+let showwindspeed=document.getElementById('showwindspeed');
 
+
+let showlocation2=document.getElementById('showlocation2');
 
 
 cityinput.addEventListener('change', getCity);
@@ -10,7 +17,30 @@ cityinput.addEventListener('change', getCity);
 
 function getCity(event){
 
-    console.log(`the city is ${event.target.value}`);
+    showlocation.innerHTML=`This is the Weather In ${event.target.value}`;
+
+    let theURL=`https://api.openweathermap.org/data/2.5/weather?q=${event.target.value}&appid=286ad2f78fee5038e5f4c39b2c60a946`;
+
+
+        //api calling
+        fetch(theURL,{method:'GET'})
+        //return promise
+        .then((res) =>  res.json())
+        //resolve the promise
+        .then((data) => {
+            console.log(data)
+            let cityName = data.name;
+
+            showlocation2.innerHTML=`The City from API is ${cityName}`;
+            showtemperature.innerHTML=`The temperature from API is ${(data.main.temp-273.15).toFixed(2)}C`;
+            showweather.innerHTML=`The weather from API is ${(data.weather[0].main)}`;
+            showhumidity.innerHTML=`The humidity from API is ${(data.main.humidity)}%`;
+            showwindspeed.innerHTML=`The wind speed from API is ${(data.wind.speed)} km/hr`;
+
+
+        })
+
+
 
 }
 
@@ -59,3 +89,7 @@ function showPosition(data){
         y.innerText=`Weather of ${cityName} is ${temp}`
     })
 }
+
+
+// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=286ad2f78fee5038e5f4c39b2c60a946
+
