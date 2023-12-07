@@ -1,6 +1,19 @@
 body{
     background:url('https://i.ibb.co/K78hDdc/sunnyhill.jpg');
     background-size: cover;
+    text-align:center;
+}
+
+#inputcontainer{
+    text-align: center;
+    background-color: rgba(108, 122, 137,0.3);
+    display:inline-block;
+    width:40%;
+    padding:10%;
+}
+
+#weatherimage{
+    width:20px;
 }
 
 
